@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "specialization": "Cardiologist",
+      "license_number": "12345",
+      "hospital": "General Hospital",
+      "consultation_fee": 100.00
+    },
+    {
+      "id": 2,
+      "specialization": "Dermatologist",
+      "license_number": "54321",
+      "hospital": "Skin Clinic",
+      "consultation_fee": 120.00
+    }
+  ]
+  

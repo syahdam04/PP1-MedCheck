@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan Kesehatan</title>
+    <style>
+        /* CSS Anda di sini */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('background.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .navbar {
+            background-color: #5bc0de;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+        .navbar-brand img {
+            height: 30px; 
+            margin-right: 10px; 
+        }
+        .navbar-links {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar-links li {
+            margin-right: 20px;
+        }
+        .navbar-links li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .navbar-links li a:hover {
+            color: #31b0d5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            background-color: rgba(255, 255, 255, 0.8); 
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .content h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .button {
+            display: inline-block;
+            background-color: #5bc0de;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #31b0d5;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1f1717;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Pencarian styling */
+        .search-container {
+            display: none;
+        }
+        .search-container.active {
+            display: flex;
+            align-items: center;
+        }
+        .search-input {
+            flex: 1;
+            margin-right: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+        }
+        .search-button {
+            padding: 8px 20px;
+            background-color: #31b0d5;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#" class="navbar-brand">
+            <img src="https://img.lovepik.com/free-png/20220125/lovepik-medical-health-logo-png-image_401737204_wh1200.png" alt=""> 
+            Health Home
+        </a>
+        <div class="navbar-links">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/service">Services</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/artikel">Articles</a></li>
+            <li><a href="/jadwal">Jadwal Dokter</a></li>
+            <li><a href="/users">Users</a></li>
+            <% if (typeof user !== 'undefined' && user) { %>
+                <li class="dropdown" id="profileDropdown">
+                    <a href="#" class="dropbtn">Profile</a>
+                    <div class="dropdown-content">
+                        <a href="#">Edit Profile</a>
+                        <a href="#">History</a>
+                        <a href="/logout">Logout</a>
+                    </div>
+                </li>
+            <% } else { %>
+                <li><a href="/login">Login</a></li>
+            <% } %>
+        </div>
+        <div class="search-container" id="searchContainer">
+            <input type="text" class="search-input" id="searchInput" placeholder="Search...">
+            <button class="search-button" id="searchButton">Search</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <h1>Welcome to Health Home</h1>
+            <p>
+                Health Home adalah tempat untuk mendapatkan layanan kesehatan terbaik untuk Anda dan keluarga. Kami menyediakan berbagai layanan kesehatan mulai dari pemeriksaan rutin hingga perawatan khusus.
+            </p>
+            <p>
+                Dengan tim profesional kami yang berpengalaman dan teknologi terkini, kami berkomitmen untuk memberikan perawatan yang berkualitas dan terpercaya kepada setiap pasien.
+            </p>
+            <a href="/service" class="button">Explore Our Services</a>
+        </div>
+    </div>
+    <script>
+        const searchContainer = document.getElementById('searchContainer');
+        const searchButton = document.getElementById('searchButton');
+        
+        searchButton.addEventListener('click', function() {
+            searchContainer.classList.toggle('active');
+            if (searchContainer.classList.contains('active')) 
+                document.getElementById('search')
+        })

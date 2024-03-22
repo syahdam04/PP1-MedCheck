@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "userId": 1,
+      "doctorId": 1,
+      "appointment_date": "2024-03-25",
+      "status": "Scheduled"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "doctorId": 2,
+      "appointment_date": "2024-04-10",
+      "status": "Scheduled"
+    }
+  ]
+  

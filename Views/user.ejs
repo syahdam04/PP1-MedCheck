@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Users</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #41a6f6;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        a.button {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #41a6f6;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        a.button:hover {
+            background-color: #368fc1;
+        }
+
+        a.update-button {
+            background-color: #4CAF50;
+        }
+
+        a.delete-button {
+            background-color: #f44336;
+        }
+
+        a.button+a.button {
+            margin-left: 5px;
+        }
+
+        .navbar {
+            background-color: #5bc0de;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .navbar-links {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar-links li {
+            margin-right: 20px;
+        }
+
+        .navbar-links li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar-links li a:hover {
+            color: #31b0d5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .content h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #5bc0de;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #31b0d5;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #241f1f;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .search-container.active {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-input {
+            flex: 1;
+            margin-right: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .search-button {
+            padding: 8px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+
+        <a href="#" class="navbar-brand">
+            <img src="https://img.lovepik.com/free-png/20220125/lovepik-medical-health-logo-png-image_401737204_wh1200.png"
+                alt="">
+            Health Home
+        </a>
+        <div class="navbar-links">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/service">Services</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/artikel">Articles</a></li>
+            <li><a href="/jadwal">Jadwal Dokter</a></li>
+            <li><a href="/users">Users</a></li>
+            <% if (typeof user !=='undefined' && user) { %>
+                <li class="dropdown" id="profileDropdown">
+                    <a href="#" class="dropbtn">Profile</a>
+                    <div class="dropdown-content">
+                        <a href="#">Edit Profile</a>
+                        <a href="#">History</a>
+                        <a href="/logout">Logout</a>
+                    </div>
+                </li>
+                <% } else { %>
+                    <li><a href="/login">Login</a></li>
+                    <% } %>
+        </div>
+        <div class="search-container" id="searchContainer">
+            <form action="/users" method="GET">
+                <input type="text" class="search-input" id="searchInput" name="search" placeholder="Search...">
+                <button type="submit" class="search-button">Search</button>
+            </form>
+        </div>
+    </div>
+    <% if (notification) { %>
+        <p>
+            <%= notification %> ahh
+        </p>
+        <% } %>
+            <h1>All Users</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Phone Number</th>
+                        <th>Address</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% users.forEach((user, i)=> { %>
+                        <tr>
+                            <td>
+                                <%= i + 1 %>
+                            </td>
+                            <td>
+                                <%= user.fullName %>
+                            </td>
+                            <td>
+                                <%= user.email %>
+                            </td>
+                            <td>
+                                <%= age(user.DOB) %>
+                            </td>
+                            <td>
+                                <%= user.gender %>
+                            </td>
+                            <td>
+                                <%= user.phone_number %>
+                            </td>
+                            <td>
+                                <%= user.address %>
+                            </td>
+                            <td>
+                                <a href="/users/<%= user.id %>/update" class="button update-button">Update</a>
+                                <a href="/users/<%= user.id %>/delete" class="button delete-button">Delete</a>
+                            </td>
+                        </tr>
+                        <% }); %>
+                </tbody>
+            </table>
+            <a href="/users/add" class="button">Add New User</a>
+</body>
+</html>

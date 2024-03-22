@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Health Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Tambahkan CSS Anda di sini */
+
+        .navbar {
+            background-color: #5bc0de;
+            color: #333;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styling untuk brand logo */
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+        .navbar-brand img {
+            height: 30px; 
+            margin-right: 10px; 
+        }
+
+        /* Styling untuk gambar brand logo */
+        .navbar-brand img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        /* Styling untuk daftar menu navbar */
+        .navbar-links {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        /* Styling untuk setiap item menu navbar */
+        .navbar-links li {
+            margin-right: 20px;
+        }
+
+        /* Styling untuk tautan menu navbar */
+        .navbar-links li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        /* Efek hover untuk tautan menu navbar */
+        .navbar-links li a:hover {
+            color: #5bc0de;
+        }
+
+        /* Styling untuk judul */
+        .container h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Styling untuk paragraf */
+        .container p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        /* Styling untuk daftar layanan */
+        .service-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Styling untuk setiap layanan */
+        .service-item {
+            width: 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: left;
+        }
+
+        /* Styling untuk judul layanan */
+        .service-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        /* Styling untuk deskripsi layanan */
+        .service-description {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* Styling untuk tombol "Learn More" */
+        .learn-more-button {
+            display: inline-block;
+            background-color: #5bc0de;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        /* Efek hover untuk tombol "Learn More" */
+        .learn-more-button:hover {
+            background-color: #31b0d5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="#" class="navbar-brand">
+            <img src="https://img.lovepik.com/free-png/20220125/lovepik-medical-health-logo-png-image_401737204_wh1200.png" alt=""> 
+            Health Home
+        </a>
+        <ul class="navbar-links">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/service">Services</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/artikel">Articles</a></li>
+            <li><a href="/jadwal">Jadwal Dokter</a></li>
+            <li><a href="/users">Users</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <h1>Our Services</h1>
+        <p></p>
+        <div class="service-list">
+            <div class="service-item">
+                <h2 class="service-title">Janji Temu Dokter</h2>
+                <p class="service-description">Hubungkan dengan profesional perawatan kesehatan online untuk nasihat dan konsultasi medis.</p>
+                <a href="/listdokter" class="learn-more-button">Learn More</a>
+            </div>
+            <!-- Layanan 2 -->
+            <div class="service-item">
+                <h2 class="service-title">Pemeriksaan medis</h2>
+                <p class="service-description">Jadwalkan pemeriksaan medis rutin untuk memonitor kesehatan anda dan deteksi masalah apa pun sejak dini.</p>
+                <a href="#" class="learn-more-button">Learn More</a>
+            </div>
+            <!-- Layanan 3 -->
+            <div class="service-item">
+                <h2 class="service-title">Health Education</h2>
+                <p class="service-description">Access educational resources and information to learn about various
+                    health topics.</p>
+                <a href="#" class="learn-more-button">Learn More</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

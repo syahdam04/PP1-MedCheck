@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Dokter - Health Home</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: #5bc0de;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 32px;
+        }
+        
+        section.doctors {
+            padding: 40px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .doctor {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px; /* Lebar card */
+        }
+        
+        .doctor img {
+            width: 100%;
+            height: auto;
+            border-bottom: 2px solid #5bc0de;
+        }
+        
+        .doctor-info {
+            padding: 20px;
+        }
+        
+        .doctor-info h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .doctor-info p {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .book-appointment-button {
+            background-color: #5bc0de;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .book-appointment-button:hover {
+            background-color: #4ca7d0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>List Dokter</h1>
+        </div>
+    </header>
+    <section class="doctors">
+        <div class="doctor">
+            <img src="https://www.shutterstock.com/image-vector/profile-blank-icon-empty-photo-600nw-535853269.jpg" alt="Cardiologist">
+            <div class="doctor-info">
+                <h2>Cardiologist</h2>
+                <p>License Number: 12345</p>
+                <p>Hospital: General Hospital</p>
+                <p>Consultation Fee: $100.00</p>
+                <div class="button-container">
+                    <form action="/janjisetia" method="POST">
+                        <input type="hidden" name="user" value="userId">
+                        <input type="hidden" name="doctor" value="doctorId">
+                        <input type="hidden" name="appointment_date" value="appointmentDate">
+                        <button type="submit" class="book-appointment-button">Buat Janji</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="doctor">
+            <img src="https://www.shutterstock.com/image-vector/profile-blank-icon-empty-photo-600nw-535853269.jpg" alt="Dermatologist">
+            <div class="doctor-info">
+                <h2>Dermatologist</h2>
+                <p>License Number: 54321</p>
+                <p>Hospital: Skin Clinic</p>
+                <p>Consultation Fee: $120.00</p>
+                <div class="button-container">
+                    <form action="/janjisetia" method="POST">
+                        <input type="hidden" name="user" value="userId">
+                        <input type="hidden" name="doctor" value="doctorId">
+                        <input type="hidden" name="appointment_date" value="appointmentDate">
+                        <button type="submit" class="book-appointment-button">Buat Janji</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

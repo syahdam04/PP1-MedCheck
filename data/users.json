@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "email": "aryarizki@gmail.com",
+      "password": "medankeras",
+      "fullName": "Arya Rizki Husein",
+      "DOB": "1980-05-15",
+      "gender": "Male",
+      "phone_number": "089514028200",
+      "address": "Jl. cakrawala gang sempit no.2 Medan, Sumatera Utara"
+    },
+    {
+      "id": 2,
+      "email": "baariq25@gmail.com",
+      "password": "salamyuk",
+      "fullName": "Muhammad Baariq Akbar",
+      "DOB": "2001-05-20",
+      "gender": "Male",
+      "phone_number": "082147999912",
+      "address": "Jl. paris 2 Komplek PIK no.11A Pontianak, Kalimantan Barat"
+    }
+  ]
+  
